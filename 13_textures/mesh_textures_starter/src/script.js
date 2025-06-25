@@ -33,6 +33,19 @@ texture.wrapT=THREE.RepeatWrapping
 const material = new THREE.MeshBasicMaterial({map:texture});
 //material.color= new THREE.Color('green')
 scene.background = new THREE.Color('white')
+texture.offset.x=0.6
+/*pane.addEventListener(texture, 'offset',{
+  x:{
+    min:0,
+    max:1,
+    step:0.001
+  },
+  y:{
+    min:0,
+    max:1,
+    step:0.001
+  }
+})*/
 // initialize the mesh
 const cube = new THREE.Mesh(geometry, material);
 cube.rotation.x= -1* Math.PI * 0.5
