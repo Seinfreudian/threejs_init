@@ -8,9 +8,13 @@ const scene = new THREE.Scene();
 //const geometry = new THREE.SphereGeometry(1,32,8);
 //const geometry = new THREE.PlaneGeometry(1,1, 16,2);
 const geometry = new THREE.TorusKnotGeometry(1, 0.4, 40, 8);
-const cubeMaterial = new THREE.MeshBasicMaterial({ color: "red", wireframe: true });
+const cubeMaterial = new THREE.MeshPhongMaterial({ color: "red", shininess: 100 });
 const cubeMesh = new THREE.Mesh(geometry, cubeMaterial);
-
+const pointlight = new THREE.PointLight(0xffffff, 2)
+const ambilight = new THREE.AmbientLight(0xffffff,0.2)
+pointlight.position.set(2,2,2)
+scene.add(pointlight)
+scene.add(ambilight)
 //custom geometry
 //set vertices
 /*const vertices = new Float32Array([
